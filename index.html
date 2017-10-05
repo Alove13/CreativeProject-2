@@ -8,7 +8,6 @@
                     $("#submitButton").click(function(e){
                            e.preventDefault();
                             var myurl = "http://food2fork.com/api/search?key=eb2b238428ee5a9eea38395e0c399aca&q="+$("#searchBox").val();
-                            //console.log(myurl);
                             $.ajax({
                                 dataType: "json",
                                 url: myurl,
@@ -29,12 +28,7 @@
             </script>
         </head>
         <body>
-    
-            <!-- <div id="vertFixedMenu">I'm the Fixed Menu</div> -->
-            
-            <!-- rightNavBar for cool settings with JQuery -->
-            <!-- <div id="rightNavBar">I'm the fixed NavBar</div> -->
-            
+              
              <div id="backgroundImages">
     
                     <video id="topBackground" controls autoplay loop>
