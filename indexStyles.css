@@ -44,7 +44,7 @@ body{
     left: 0;
     width: 100%;
     height: 600px;
-    background-image: url("MarisaHoloLens.jpg");
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,7 +56,6 @@ body{
     left: 0;
     width: 100%;
     height: 600px;
-    background-image: url("Jesus.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -68,7 +67,6 @@ body{
     left: 0;
     width: 100%;
     height: 600px;
-    background-image: url("WeAreFunny.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -78,7 +76,7 @@ body{
 #horizContent{
     position: fixed;
     min-width: 500px;
-    top: 500px;
+    top: 100px;
     left: 400px;
     margin:30px;
     padding: 30px;
@@ -86,4 +84,5 @@ body{
     background: #f1c40f;
     color: #fff;
     z-index: 11;
+    opacity: .7;
 }

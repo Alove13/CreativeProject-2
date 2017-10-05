@@ -3,25 +3,63 @@
             <link rel="stylesheet" type="text/css" href="indexStyles.css">
             <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
             <script>
+                
+                $(document).ready(function(){
+                    $("#submitButton").click(function(e){
+                           e.preventDefault();
+                            var myurl = "http://food2fork.com/api/search?key=eb2b238428ee5a9eea38395e0c399aca&q="+$("#searchBox").val();
+                            //console.log(myurl);
+                            $.ajax({
+                                dataType: "json",
+                                url: myurl,
+                                async: false,
+                                crossDomain: true,
+                                success: function(data){
+                                       var myrecipe;    
+                                        for(var i=0; i<30; i++)
+                                        {
+                                            myrecipe+="<li><a href=\""+((data["recipes"])[i])["source_url"]+"\">"+((data["recipes"])[i])["title"]+"</a></li>";
+                                        }
+                                        $("#recipeDisplay").html(myrecipe);
+                                    }
+                                });
+                        });
+                    });
+                
             </script>
         </head>
         <body>
     
-            <div id="vertFixedMenu">I'm the Fixed Menu</div>
+            <!-- <div id="vertFixedMenu">I'm the Fixed Menu</div> -->
             
             <!-- rightNavBar for cool settings with JQuery -->
-            <div id="rightNavBar">I'm the fixed NavBar</div>
+            <!-- <div id="rightNavBar">I'm the fixed NavBar</div> -->
             
-            <div id="backgroundImages">
-                <div id="topBackground"></div> 
-                <div id="midBackground"></div>
-                <div id="bottomBackground"></div>
-            </div>
+             <div id="backgroundImages">
+    
+                    <video id="topBackground" controls autoplay loop>
+                        <source src="videoplayback.mp4" type="video/mp4">        
+                    </video>
+                
+                
+                        <video id="midBackground" controls autoplay loop>
+                            <source src="Cut-n-Paste.mp4" type="video/mp4">        
+                        </video>
+                
+                
+                        <video id="bottomBackground" controls autoplay loop>
+                            <source src="Sunset-Lapse.mp4" type="video/mp4">       
+                        </video>
+                
+            </div> 
 
             <div id="horizContent">
-                <p>I am just hovering over the images in the background</p>
+                <input id="searchBox" type="text" value="Search">
+                <button id="submitButton">Submit</button>
+                <div id="recipeDisplay">Will Display Recipes and Links Here
+                 <a id="links" href=""></a>   
+                </div>
             </div>
-        
         </body>
     
     
